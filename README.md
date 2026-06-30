@@ -1,113 +1,32 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BandzEB Shop</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header, footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em 0;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            background-color: #444;
-            padding: 1em 0;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-        }
-        .product {
-            border: 1px solid #ccc;
-            padding: 15px;
-            margin: 15px;
-            text-align: center;
-        }
-        .product img {
-            max-width: 100%;
-            height: auto;
-        }
-        .product h2 {
-            font-size: 1.5em;
-        }
-        .products {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-        footer p {
-            margin: 0;
-        }
-    </style>
-</head>
-<body>
+# React + TypeScript + Vite
 
-    <!-- Header -->
-    <header>
-        <h1>Welcome to BandzEB Shop</h1>
-        <p>Your go-to store for trendy accessories!</p>
-    </header>
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-    <!-- Navigation -->
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact</a>
-    </nav>
+Currently, two official plugins are available:
 
-    <!-- Product Section -->
-    <section id="products">
-        <h2>Our Products</h2>
-        <div class="products">
-            <div class="product">
-                <img src="bracelet1.jpg" alt="Stylish Bracelet">
-                <h2>Stylish Bracelet</h2>
-                <p>$15.00</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="ring1.jpg" alt="Elegant Ring">
-                <h2>Elegant Ring</h2>
-                <p>$20.00</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="necklace1.jpg" alt="Chic Necklace">
-                <h2>Chic Necklace</h2>
-                <p>$25.00</p>
-                <button>Add to Cart</button>
-            </div>
-        </div>
-    </section>
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Us</h2>
-        <p>BandzEB Shop offers a curated collection of fashionable and high-quality accessories, designed to enhance your style. We are passionate about providing the latest trends and timeless pieces.</p>
-    </section>
+## React Compiler
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: support@bandzebshop.com</p>
-        <p>Phone: +1 (234) 567-890</p>
-    </section>
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 BandzEB Shop - All rights reserved.</p>
-    </footer>
+## Expanding the Oxlint configuration
 
-</body>
-</html>
+If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+
+```json
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "oxc"],
+  "options": {
+    "typeAware": true
+  },
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  }
+}
+```
+
+See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
